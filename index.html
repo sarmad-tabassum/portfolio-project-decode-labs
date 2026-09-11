@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarmad Tabassum — Frontend Developer · Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sarmad Tabassum — Frontend Developer from Karachi. HTML5, CSS3, JavaScript, React.js, Tailwind CSS, REST APIs & Supabase. Open to internships and entry-level roles."
+    />
+    <meta name="theme-color" content="#161310" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23161310'/><text x='32' y='45' font-size='36' font-family='Georgia' text-anchor='middle' fill='%23E4572E'>S</text></svg>"
+    />
+
+    <!-- CDN: fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <noscript
+      ><style>
+        .loader,
+        .cursor,
+        .cursor-ring {
+          display: none;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+        .ln > span {
+          transform: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- preloader -->
+    <div class="loader" aria-hidden="true">
+      <span class="loader__pct" id="ldPct">0</span>
+      <div class="loader__bar"><i id="ldBar"></i></div>
+      <span class="loader__txt">LOADING — PORTFOLIO OF SARMAD TABASSUM</span>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><i id="pbar"></i></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"><span id="curLab"></span></div>
+
+    <!-- ================= HEADER (4 links — nav &lt; 5 rule) ================= -->
+    <header class="hdr" id="hdr">
+      <div class="wrap hdr__in">
+        <a class="brand" href="#top"
+          >Sarmad<b>·</b>Tabassum <small>Frontend Dev</small></a
+        >
+        <nav class="nav" aria-label="Primary">
+          <div class="nav__links">
+            <a href="#about" data-spy="about">About</a>
+            <a href="#work" data-spy="work">Work</a>
+            <a href="#process" data-spy="process">Process</a>
+            <a href="#contact" data-spy="contact">Contact</a>
+          </div>
+          <a class="nav__cta" href="#contact">Let's&nbsp;Talk&nbsp;→</a>
+          <button
+            class="burger"
+            id="burger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="menu"
+          >
+            <i></i><i></i><i></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="menu" id="menu" aria-label="Mobile">
+      <a class="big" href="#about"><span>01</span>About</a>
+      <a class="big" href="#work"><span>02</span>Work</a>
+      <a class="big" href="#process"><span>03</span>Process</a>
+      <a class="big" href="#standards"><span>04</span>Standards</a>
+      <a class="big" href="#contact"><span>05</span>Contact</a>
+      <p class="menu__foot">
+        Karachi, Pakistan · Saylani Mass IT · Open to work
+      </p>
+    </nav>
+
+    <main id="top">
+      <!-- ================= HERO ================= -->
+      <section class="hero" aria-label="Introduction">
+        <div class="wrap">
+          <div class="hero__meta">
+            <span class="avail"
+              ><i aria-hidden="true"></i>Open to internships &amp; junior
+              roles</span
+            >
+            <span>Saylani Mass IT — <b>Web &amp; App Dev</b></span>
+            <span>Based in <b>Karachi, PK</b></span>
+          </div>
+
+          <h1 class="hero__title">
+            <span class="ln" style="--i: 0"
+              ><span>Sarmad <em>Tabassum</em></span></span
+            >
+            <span class="ln" style="--i: 1"
+              ><span>builds <span class="out">clean</span></span></span
+            >
+            <span class="ln" style="--i: 2"><span>for the web.</span></span>
+          </h1>
+
+          <div class="hero__grid">
+            <div class="hero__lede rv" style="--d: 0.15s">
+              <p>
+                Frontend-focused web developer with a strong foundation in
+                <strong
+                  >HTML5, CSS3, JavaScript, React.js and Tailwind CSS</strong
+                >
+                — building responsive interfaces, wiring
+                <strong>REST APIs</strong>, and working with
+                <strong>Supabase</strong> for data and storage. Passionate about
+                clean UI, fast learning, and shipping real projects.
+              </p>
+              <div class="hero__btns">
+                <a class="btn btn--fill" href="#work"
+                  >See my work
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+                ></a>
+                <a class="btn btn--line" href="#contact">Get in touch</a>
+              </div>
+            </div>
+
+            <figure class="hero__fig rv" style="--d: 0.3s">
+              <div class="frame">
+                <!-- TODO: apni GENERATED PHOTO yahan lagao → assets/portrait.jpg
+                 (upar wala master prompt se banao, 4:5 crop) -->
+                <img
+                  id="heroImg"
+                  src="./assets/portrait.png"
+                  alt="Portrait of Sarmad Tabassum, frontend developer based in Karachi"
+                  width="1000"
+                  height="1250"
+                  fetchpriority="high"
+                />
+              </div>
+              <figcaption>
+                <span>Fig. 01 — the developer</span
+                ><span>Karachi · Pakistan</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+          <span>SCROLL</span><i></i>
+        </div>
+      </section>
+
+      <!-- ================= MARQUEE ================= -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <ul>
+            <li>HTML5 &amp; CSS3</li>
+            <li>JavaScript ES6+</li>
+            <li>React.js</li>
+            <li>Tailwind CSS</li>
+            <li>Bootstrap</li>
+            <li>REST APIs</li>
+            <li>Supabase</li>
+            <li>Git &amp; GitHub</li>
+            <li>Responsive</li>
+            <li>Clean UI</li>
+          </ul>
+          <ul>
+            <li>HTML5 &amp; CSS3</li>
+            <li>JavaScript ES6+</li>
+            <li>React.js</li>
+            <li>Tailwind CSS</li>
+            <li>Bootstrap</li>
+            <li>REST APIs</li>
+            <li>Supabase</li>
+            <li>Git &amp; GitHub</li>
+            <li>Responsive</li>
+            <li>Clean UI</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ================= 01 ABOUT ================= -->
+      <section class="sec" id="about">
+        <div class="wrap about__grid">
+          <aside class="about__side rv">
+            <p class="eyebrow"><i>01</i> — About</p>
+            <h2 class="h2">The person behind <em>the markup.</em></h2>
+            <figure class="fig">
+              <div class="frame">
+                <!-- TODO: Variant B prompt se generated workspace image → assets/workspace.jpg -->
+                <img
+                  src="./assets/workspace.png"
+                  alt="A laptop with code on screen — where the work happens"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Fig. 02 — where it all happens</figcaption>
+            </figure>
+          </aside>
+          <div class="about__body rv" style="--d: 0.15s">
+            <p>
+              I'm a frontend-focused web developer from
+              <strong>Karachi</strong>, currently expanding into full-stack
+              territory through the
+              <strong
+                >Web &amp; App Development course at Saylani Mass IT</strong
+              >. My foundation is solid and boring in the best way — HTML5, CSS3
+              and modern JavaScript — and on top of it I build responsive
+              interfaces with <strong>React.js and Tailwind CSS</strong>,
+              integrate REST APIs, and manage real data with
+              <strong>Supabase</strong>.
+            </p>
+            <p>
+              What I care about is the same thing this page cares about:
+              <strong>clean UI that means something</strong>. Pages that load
+              fast, shift never, and read the same way to a browser, a search
+              engine and a screen reader. I debug patiently, pick up new tools
+              fast, and ship projects end to end — not demos.
+            </p>
+            <blockquote class="about__quote">
+              "Clean UI isn't decoration — it's respect for the person using
+              it."
+            </blockquote>
+            <p class="now">
+              <b>Currently →</b> expanding into full-stack: Supabase, storage
+              &amp; everything behind the interface.
+            </p>
+
+            <div class="stats rv" style="--d: 0.2s" aria-label="Quick numbers">
+              <div><b>03</b><span>Projects shipped</span></div>
+              <div><b>00</b><span>W3C errors</span></div>
+              <div><b>0.00</b><span>Layout shift (CLS)</span></div>
+              <div><b>03</b><span>Languages spoken</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 02 STACK ================= -->
+      <section class="stack sec" id="stack">
+        <div class="wrap">
+          <header class="shead rv">
+            <p class="eyebrow"><i>02</i> — The Stack</p>
+            <h2 class="h2">What I work with. <em>Five honest lines.</em></h2>
+          </header>
+
+          <article class="skill rv">
+            <span class="skill__no">SKILL / 01</span>
+            <h3 class="skill__key">Semantic HTML5 &amp; CSS3</h3>
+            <p class="skill__val">
+              Responsive layouts, web page structuring and design from scratch —
+              <strong>Bootstrap</strong> when the timeline demands it,
+              hand-rolled CSS when craft does.
+              <strong>Mobile-first, always.</strong>
+            </p>
+          </article>
+          <article class="skill rv" style="--d: 0.06s">
+            <span class="skill__no">SKILL / 02</span>
+            <h3 class="skill__key">Modern JavaScript (ES6+)</h3>
+            <p class="skill__val">
+              Vanilla JS for real products — DOM control,
+              <strong>fetch &amp; Axios</strong>, async flows — plus the
+              patience for <strong>debugging and troubleshooting</strong> until
+              it actually works.
+            </p>
+          </article>
+          <article class="skill rv" style="--d: 0.12s">
+            <span class="skill__no">SKILL / 03</span>
+            <h3 class="skill__key">React.js &amp; Tailwind CSS</h3>
+            <p class="skill__val">
+              Component thinking with <strong>Hooks</strong>, state that stays
+              sane, <strong>API integration</strong>, and utility-first styling
+              with Tailwind for interfaces that scale.
+            </p>
+          </article>
+          <article class="skill rv" style="--d: 0.18s">
+            <span class="skill__no">SKILL / 04</span>
+            <h3 class="skill__key">REST APIs &amp; Supabase</h3>
+            <p class="skill__val">
+              Real-time data from public APIs, <strong>CRUD operations</strong>,
+              image uploads and storage — <strong>Supabase</strong> as the
+              backend behind the interface.
+            </p>
+          </article>
+          <article class="skill rv" style="--d: 0.24s">
+            <span class="skill__no">SKILL / 05</span>
+            <h3 class="skill__key">Workflow &amp; CS Fundamentals</h3>
+            <p class="skill__val">
+              <strong>Git &amp; GitHub</strong> for version control,
+              computer-science fundamentals underneath, and a habit of picking
+              up new tools and workflows <strong>independently — fast</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 03 WORK ================= -->
+      <section class="sec" id="work">
+        <div class="wrap">
+          <header class="shead rv">
+            <p class="eyebrow"><i>03</i> — Selected Work</p>
+            <h2 class="h2">
+              Shipped builds, one rule: <em>they all work.</em>
+            </h2>
+            <p class="sub">
+              Hover to preview, click to open the story. Each project was
+              planned, built and debugged by hand.
+            </p>
+          </header>
+
+          <ul class="work rv">
+            <!-- TODO: Source/Live links apne actual GitHub repos se replace karo -->
+            <li
+              class="work__item"
+              data-img="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop"
+            >
+              <button
+                class="work__row"
+                aria-expanded="false"
+                data-cursor="VIEW"
+              >
+                <span class="work__no">/ 01</span>
+                <span class="work__ttl">Postify — Publishing Platform</span>
+                <span class="work__tags">React · Supabase · CRUD</span>
+                <span class="work__plus"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    fill="none"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <div class="work__panel">
+                <div class="work__panel-in">
+                  <div class="work__cnt">
+                    <div>
+                      <p>
+                        The front end of a full-stack post-publishing platform,
+                        built end to end — CRUD operations, interactive user
+                        profiles and image uploads — all wired to
+                        <strong>Supabase</strong> for storage and data
+                        management. My first real step beyond the static page.
+                      </p>
+                      <ul class="work__pts">
+                        <li>Full CRUD flow with interactive user profiles</li>
+                        <li>Image uploads handled via Supabase storage</li>
+                        <li>End-to-end front end of a full-stack product</li>
+                      </ul>
+                      <div class="work__links">
+                        <a href="#" aria-label="View Postify live">Live ↗</a>
+                        <a
+                          href="https://github.com/sarmad-tabassum/complete-post-app"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="View Postify source on GitHub"
+                          >Source ↗</a
+                        >
+                      </div>
+                    </div>
+                    <p style="align-self: end">
+                      <span class="work__status"
+                        >✓ Shipped — Supabase powered</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li
+              class="work__item"
+              data-img="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=800&auto=format&fit=crop"
+            >
+              <button
+                class="work__row"
+                aria-expanded="false"
+                data-cursor="VIEW"
+              >
+                <span class="work__no">/ 02</span>
+                <span class="work__ttl">Dynamic Weather App</span>
+                <span class="work__tags">JavaScript · Axios · WeatherAPI</span>
+                <span class="work__plus"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    fill="none"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <div class="work__panel">
+                <div class="work__panel-in">
+                  <div class="work__cnt">
+                    <div>
+                      <p>
+                        An interactive weather-tracking interface that fetches
+                        real-time data from <strong>WeatherAPI</strong> using
+                        Axios — with dynamic UI updates and
+                        <strong>background video transitions</strong> that
+                        change with the actual weather outside.
+                      </p>
+                      <ul class="work__pts">
+                        <li>Real-time data via Axios + WeatherAPI</li>
+                        <li>Dynamic UI states driven by live conditions</li>
+                        <li>Background video transitions per weather type</li>
+                      </ul>
+                      <div class="work__links">
+                        <a href="#" aria-label="View the weather app live"
+                          >Live ↗</a
+                        >
+                        <a
+                          href="https://github.com/sarmad-tabassum/weather-app-with-details"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="View weather app source on GitHub"
+                          >Source ↗</a
+                        >
+                      </div>
+                    </div>
+                    <p style="align-self: end">
+                      <span class="work__status">✓ Shipped — live data</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li
+              class="work__item"
+              data-img="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop"
+            >
+              <button
+                class="work__row"
+                aria-expanded="false"
+                data-cursor="VIEW"
+              >
+                <span class="work__no">/ 03</span>
+                <span class="work__ttl">News Portal Application</span>
+                <span class="work__tags">Vanilla JS · REST · Responsive</span>
+                <span class="work__plus"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    fill="none"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <div class="work__panel">
+                <div class="work__panel-in">
+                  <div class="work__cnt">
+                    <div>
+                      <p>
+                        A real-time news feed built with
+                        <strong>vanilla JavaScript and REST APIs</strong> —
+                        structured HTML5/CSS3, responsive layouts, and a clean
+                        reading experience that holds up across every device.
+                      </p>
+                      <ul class="work__pts">
+                        <li>Live feed powered by REST APIs</li>
+                        <li>Semantic, structured HTML5/CSS3</li>
+                        <li>Responsive reading experience, mobile-first</li>
+                      </ul>
+                      <div class="work__links">
+                        <a href="#" aria-label="View the news portal live"
+                          >Live ↗</a
+                        >
+                        <a
+                          href="https://github.com/sarmad-tabassum/news-app-by-api-smit"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="View news portal source on GitHub"
+                          >Source ↗</a
+                        >
+                      </div>
+                    </div>
+                    <p style="align-self: end">
+                      <span class="work__status">✓ Shipped — responsive</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li
+              class="work__item"
+              data-img="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop"
+            >
+              <button
+                class="work__row"
+                aria-expanded="false"
+                data-cursor="VIEW"
+              >
+                <span class="work__no">/ 04</span>
+                <span class="work__ttl">This Portfolio</span>
+                <span class="work__tags">You are here · Vanilla JS</span>
+                <span class="work__plus"
+                  ><svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    fill="none"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <div class="work__panel">
+                <div class="work__panel-in">
+                  <div class="work__cnt">
+                    <div>
+                      <p>
+                        Handcrafted, end to end — the preloader, the cursor, the
+                        accordion you just used, all written in vanilla
+                        JavaScript because understanding the platform beats
+                        importing it. One h1, four nav links, semantic to the
+                        last tag.
+                      </p>
+                      <ul class="work__pts">
+                        <li>
+                          Custom cursor, hover previews and saved checklists —
+                          no libraries
+                        </li>
+                        <li>
+                          Respects prefers-reduced-motion and works without JS
+                        </li>
+                        <li>W3C-valid, audited, accessible by default</li>
+                      </ul>
+                      <div class="work__links">
+                        <a
+                          href="https://github.com/sarmad-tabassum/portfolio-project-decode-labs"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="View this portfolio's source on GitHub"
+                          >Source ↗</a
+                        >
+                      </div>
+                    </div>
+                    <p style="align-self: end">
+                      <span class="work__status">● You're looking at it</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <figure class="work__preview" aria-hidden="true">
+            <div class="frame">
+              <img
+                id="prevImg"
+                src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop"
+                alt=""
+                width="600"
+                height="420"
+              />
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ================= 04 PROCESS ================= -->
+      <section class="sec" id="process">
+        <div class="wrap">
+          <header class="shead rv">
+            <p class="eyebrow"><i>04</i> — How I Work</p>
+            <h2 class="h2">
+              Every project is a pipeline: <em>plan → build → debug.</em>
+            </h2>
+            <p class="sub">
+              When something breaks, isolate the stage instead of guessing — the
+              engineering mindset I apply to everything.
+            </p>
+          </header>
+
+          <div class="ipo rv">
+            <div class="ipo__col">
+              <p class="ipo__num" aria-hidden="true">01</p>
+              <p class="ipo__stage">Input — Plan</p>
+              <h3>Structure first</h3>
+              <p>
+                Sitemap and heading outline before a single tag. User needs
+                mapped to sections — findability over decoration.
+              </p>
+            </div>
+            <div class="ipo__col">
+              <p class="ipo__num" aria-hidden="true">02</p>
+              <p class="ipo__stage">Process — Build</p>
+              <h3>Component thinking</h3>
+              <p>
+                Meaningful markup, responsive layouts, React components and
+                Tailwind utilities — one source of truth per concern.
+              </p>
+            </div>
+            <div class="ipo__col">
+              <p class="ipo__num" aria-hidden="true">03</p>
+              <p class="ipo__stage">Output — Debug</p>
+              <h3>Ship what works</h3>
+              <p>
+                APIs tested, states handled, layouts verified on real devices.
+                If it doesn't work everywhere, it isn't done.
+              </p>
+            </div>
+          </div>
+
+          <p class="ipo__note rv">
+            <b>DEBUG →</b> broken layout? failed fetch? logic bug? Fix the
+            stage, not the symptom.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= 05 BACKGROUND ================= -->
+      <section class="sec sec--tight" id="background">
+        <div class="wrap">
+          <header class="shead rv" style="margin-bottom: 2rem">
+            <p class="eyebrow"><i>05</i> — Background</p>
+            <h2 class="h2">Education &amp; <em>training.</em></h2>
+          </header>
+          <div class="rv">
+            <article class="edu__row">
+              <span class="edu__year">In Progress</span>
+              <h3 class="edu__what">Web &amp; App Development Course</h3>
+              <span class="edu__where"
+                >Saylani Mass IT Training · Karachi
+                <span class="edu__live">Live</span></span
+              >
+            </article>
+            <article class="edu__row">
+              <span class="edu__year">2023 — 2025</span>
+              <h3 class="edu__what">FSc · Pre-Engineering</h3>
+              <span class="edu__where">Bahria College Karsaz · Karachi</span>
+            </article>
+            <article class="edu__row">
+              <span class="edu__year">2021 — 2023</span>
+              <h3 class="edu__what">Matriculation</h3>
+              <span class="edu__where">Bahria College Karsaz · Karachi</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 06 STANDARDS ================= -->
+      <section class="flight sec" id="standards">
+        <div class="wrap flight__grid">
+          <aside class="flight__side rv">
+            <p class="eyebrow"><i>06</i> — Standards</p>
+            <h2 class="h2">
+              My non-negotiables<span style="color: var(--orange)">.</span>
+            </h2>
+            <p>
+              Before any project of mine is called "done", these six boxes are
+              ticked — every time. Go ahead, try them. Your progress is saved in
+              this browser.
+            </p>
+            <div class="flight__meter">
+              <div class="flight__meter-top">
+                <span>PROGRESS</span><b id="ckCount">0 / 6</b>
+              </div>
+              <div
+                class="flight__bar"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="6"
+                aria-valuenow="0"
+                aria-label="Standards checklist progress"
+                id="ckMeter"
+              >
+                <i id="ckFill"></i>
+              </div>
+              <button class="reset" id="ckReset" type="button">Reset</button>
+            </div>
+          </aside>
+
+          <form
+            class="flight__card rv"
+            id="ckCard"
+            style="--d: 0.15s"
+            aria-label="Quality standards checklist"
+          >
+            <span class="stamp" aria-hidden="true">Approved ★</span>
+            <ul class="checks">
+              <li>
+                <label
+                  ><input type="checkbox" name="ia" /><span class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>IA</strong>Sitemap and heading outline decided
+                    before any code.</span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="html" /><span class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>HTML</strong>Semantic landmarks, exactly one
+                    &lt;h1&gt;, zero div soup.</span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="css" /><span class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>CSS</strong>One external stylesheet — clean naming,
+                    DRY, no inline styles.</span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="layout" /><span class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>LAYOUT</strong>Grid for the page, Flexbox for the
+                    parts — right tool, right scale.</span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="assets" /><span class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>ASSETS</strong>Every image has a purpose, an alt,
+                    and explicit dimensions.</span
+                  ></label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="validation" /><span
+                    class="ckbox"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12l5 5 9-11" /></svg
+                  ></span>
+                  <span class="cktxt"
+                    ><strong>VALIDATION</strong>W3C zero errors · Lighthouse 90+
+                    on every audit.</span
+                  ></label
+                >
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= QUOTE (dark) ================= -->
+      <section class="dark quote" aria-label="Philosophy">
+        <div class="wrap">
+          <p class="mark rv" aria-hidden="true">"</p>
+          <blockquote class="rv" style="--d: 0.1s">
+            <p>
+              The frontend is the only part of the system the world will ever
+              see.
+            </p>
+            <cite>— My Rule No. 01 · taped above the desk</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT / FOOTER ================= -->
+      <footer class="dark" id="contact">
+        <div class="wrap cta">
+          <p class="eyebrow rv"><i>07</i> — Your Move</p>
+          <a
+            class="mega rv"
+            style="--d: 0.1s"
+            href="mailto:sarmadplaying@gmail.com?subject=Internship%20%2F%20Frontend%20Opportunity"
+            data-cursor="HELLO"
+          >
+            Let's build something<span aria-hidden="true">→</span></a
+          >
+        </div>
+
+        <div class="wrap foot__grid">
+          <div class="rv">
+            <h4>Sarmad Tabassum</h4>
+            <p>
+              Frontend developer from Karachi — responsive interfaces, REST APIs
+              and Supabase-backed projects. Building the foundation before the
+              framework gets fancy.
+            </p>
+            <span class="foot__badge"
+              >Saylani Mass IT · Web &amp; App Development</span
+            >
+          </div>
+          <nav class="rv" style="--d: 0.08s" aria-label="Footer">
+            <h4>Sitemap</h4>
+            <ul class="foot__links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#work">Selected Work</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#standards">Standards</a></li>
+            </ul>
+          </nav>
+          <div class="rv" style="--d: 0.16s">
+            <h4>Contact</h4>
+            <ul class="foot__contact">
+              <li>
+                <span class="k">Mail</span
+                ><a href="mailto:sarmadplaying@gmail.com"
+                  >sarmadplaying@gmail.com</a
+                >
+                <button
+                  class="copy"
+                  id="copyMail"
+                  type="button"
+                  data-cursor="COPY"
+                >
+                  Copy
+                </button>
+              </li>
+              <li>
+                <span class="k">Call</span
+                ><a href="tel:+923353949723">+92 335 3949723</a>
+              </li>
+              <li>
+                <span class="k">GitHub</span
+                ><a
+                  href="https://github.com/sarmad-tabassum"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/sarmad-tabassum</a
+                >
+              </li>
+              <li><span class="k">Base</span>Karachi, Pakistan</li>
+              <li><span class="k">Speak</span>English · Urdu · Punjabi</li>
+              <li>
+                <span class="k">Local</span
+                ><span id="clock" aria-label="Local time in Karachi"
+                  >— : — PKT</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="wrap foot__base">
+          <span>© 2026 Sarmad Tabassum — handcrafted, no shortcuts</span>
+          <span>HTML · CSS · JS · React</span>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
