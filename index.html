@@ -14,7 +14,6 @@
       href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23161310'/%3E%3Ctext%20x='32'%20y='45'%20font-size='36'%20font-family='Georgia'%20text-anchor='middle'%20fill='%23E4572E'%3ES%3C/text%3E%3C/svg%3E"
     />
 
-    <!-- CDN: fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,81 +22,41 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-
-    <noscript
-      ><style>
-        .loader,
-        .cursor,
-        .cursor-ring {
-          display: none;
-        }
-        .rv {
-          opacity: 1;
-          transform: none;
-        }
-        .ln > span {
-          transform: none;
-          animation: none;
-        }
-      </style></noscript
-    >
   </head>
   <body>
+    <!--
+  DECODELABS · PROJECT 1 — STATIC WEBPAGE DESIGN
+  Pure HTML + CSS. No JavaScript, no APIs, no dynamic data.
+  Motion is CSS-only and secondary to semantic structure.
+-->
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- preloader -->
-    <div class="loader" aria-hidden="true">
-      <span class="loader__pct" id="ldPct">0</span>
-      <div class="loader__bar"><i id="ldBar"></i></div>
-      <span class="loader__txt">LOADING — PORTFOLIO OF SARMAD TABASSUM</span>
-    </div>
+    <!-- Pure-CSS scroll progress (progressive enhancement — is block ko delete karne se effect zero) -->
+    <div class="progress" aria-hidden="true"><i></i></div>
 
     <div class="grain" aria-hidden="true"></div>
-    <div class="progress" aria-hidden="true"><i id="pbar"></i></div>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"><span id="curLab"></span></div>
 
     <!-- ================= HEADER (4 links — nav &lt; 5 rule) ================= -->
-    <header class="hdr" id="hdr">
+    <header class="hdr">
       <div class="wrap hdr__in">
         <a class="brand" href="#top"
           >Sarmad<b>·</b>Tabassum <small>Frontend Dev</small></a
         >
         <nav class="nav" aria-label="Primary">
           <div class="nav__links">
-            <a href="#about" data-spy="about">About</a>
-            <a href="#work" data-spy="work">Work</a>
-            <a href="#process" data-spy="process">Process</a>
-            <a href="#contact" data-spy="contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
           </div>
           <a class="nav__cta" href="#contact">Let's&nbsp;Talk&nbsp;→</a>
-          <button
-            class="burger"
-            id="burger"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="menu"
-          >
-            <i></i><i></i><i></i>
-          </button>
         </nav>
       </div>
     </header>
 
-    <nav class="menu" id="menu" aria-label="Mobile">
-      <a class="big" href="#about"><span>01</span>About</a>
-      <a class="big" href="#work"><span>02</span>Work</a>
-      <a class="big" href="#process"><span>03</span>Process</a>
-      <a class="big" href="#standards"><span>04</span>Standards</a>
-      <a class="big" href="#contact"><span>05</span>Contact</a>
-      <p class="menu__foot">
-        Karachi, Pakistan · Saylani Mass IT · Open to work
-      </p>
-    </nav>
-
-    <main id="top">
+    <main id="main">
       <!-- ================= HERO ================= -->
-      <section class="hero">
+      <section class="hero" id="top">
         <div class="wrap">
           <div class="hero__meta">
             <span class="avail"
@@ -119,7 +78,7 @@
           </h1>
 
           <div class="hero__grid">
-            <div class="hero__lede rv" style="--d: 0.15s">
+            <div class="hero__lede">
               <p>
                 Frontend-focused web developer with a strong foundation in
                 <strong
@@ -142,6 +101,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    aria-hidden="true"
                   >
                     <path d="M5 12h14m-6-6 6 6-6 6" /></svg
                 ></a>
@@ -149,16 +109,13 @@
               </div>
             </div>
 
-            <figure class="hero__fig rv" style="--d: 0.3s">
+            <figure class="hero__fig">
               <div class="frame">
-                <!-- TODO: apni GENERATED PHOTO yahan lagao → assets/portrait.jpg
-                 (upar wala master prompt se banao, 4:5 crop) -->
                 <img
-                  id="heroImg"
-                  src="./assets/portrait.png"
+                  src="assets/portrait.png"
                   alt="Portrait of Sarmad Tabassum, frontend developer based in Karachi"
-                  width="1000"
-                  height="1250"
+                  width="970"
+                  height="1000"
                   fetchpriority="high"
                 />
               </div>
@@ -174,7 +131,7 @@
         </div>
       </section>
 
-      <!-- ================= MARQUEE ================= -->
+      <!-- ================= MARQUEE (CSS-only loop) ================= -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee__track">
           <ul>
@@ -212,10 +169,9 @@
             <h2 class="h2">The person behind <em>the markup.</em></h2>
             <figure class="fig">
               <div class="frame">
-                <!-- TODO: Variant B prompt se generated workspace image → assets/workspace.jpg -->
                 <img
-                  src="./assets/workspace.png"
-                  alt="A laptop with code on screen — where the work happens"
+                  src="assets/workspace.png"
+                  alt="A minimal developer desk with a laptop showing blurred code"
                   width="800"
                   height="600"
                   loading="lazy"
@@ -224,7 +180,7 @@
               <figcaption>Fig. 02 — where it all happens</figcaption>
             </figure>
           </div>
-          <div class="about__body rv" style="--d: 0.15s">
+          <div class="about__body rv">
             <p>
               I'm a frontend-focused web developer from
               <strong>Karachi</strong>, currently expanding into full-stack
@@ -249,12 +205,12 @@
               it."
             </blockquote>
             <p class="now">
-              <b>Currently →</b> expanding into full-stack: Supabase, storage
-              &amp; everything behind the interface.
+              <b>Currently →</b> <span>expanding into full-stack: Supabase, storage
+              &amp; everything behind the interface.</span>
             </p>
 
-            <ul class="stats rv" style="--d: 0.2s" aria-label="Quick numbers">
-              <li><b>03</b><span>Projects shipped</span></li>
+            <ul class="stats rv" aria-label="Quick numbers">
+              <li><b>03+</b><span>Projects shipped</span></li>
               <li><b>00</b><span>W3C errors</span></li>
               <li><b>0.00</b><span>Layout shift (CLS)</span></li>
               <li><b>03</b><span>Languages spoken</span></li>
@@ -281,7 +237,7 @@
               <strong>Mobile-first, always.</strong>
             </p>
           </div>
-          <div class="skill rv" style="--d: 0.06s">
+          <div class="skill rv">
             <span class="skill__no">SKILL / 02</span>
             <h3 class="skill__key">Modern JavaScript (ES6+)</h3>
             <p class="skill__val">
@@ -291,7 +247,7 @@
               it actually works.
             </p>
           </div>
-          <div class="skill rv" style="--d: 0.12s">
+          <div class="skill rv">
             <span class="skill__no">SKILL / 03</span>
             <h3 class="skill__key">React.js &amp; Tailwind CSS</h3>
             <p class="skill__val">
@@ -300,7 +256,7 @@
               with Tailwind for interfaces that scale.
             </p>
           </div>
-          <div class="skill rv" style="--d: 0.18s">
+          <div class="skill rv">
             <span class="skill__no">SKILL / 04</span>
             <h3 class="skill__key">REST APIs &amp; Supabase</h3>
             <p class="skill__val">
@@ -309,7 +265,7 @@
               backend behind the interface.
             </p>
           </div>
-          <div class="skill rv" style="--d: 0.24s">
+          <div class="skill rv">
             <span class="skill__no">SKILL / 05</span>
             <h3 class="skill__key">Workflow &amp; CS Fundamentals</h3>
             <p class="skill__val">
@@ -321,7 +277,7 @@
         </div>
       </section>
 
-      <!-- ================= 03 WORK ================= -->
+      <!-- ================= 03 WORK (native details accordion — no JS) ================= -->
       <section class="sec" id="work">
         <div class="wrap">
           <header class="shead rv">
@@ -330,274 +286,168 @@
               Shipped builds, one rule: <em>they all work.</em>
             </h2>
             <p class="sub">
-              Hover to preview, click to open the story. Each project was
-              planned, built and debugged by hand.
+              Click a row to open the story. Each project was planned, built and
+              debugged by hand.
             </p>
           </header>
 
-          <ul class="work rv">
-            <!-- TODO: Source/Live links apne actual GitHub repos se replace karo -->
-            <li
-              class="work__item"
-              data-img="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop"
-            >
-              <button
-                class="work__row"
-                aria-expanded="false"
-                data-cursor="VIEW"
-              >
-                <span class="work__no">/ 01</span>
-                <span class="work__ttl">Postify — Publishing Platform</span>
-                <span class="work__tags">React · Supabase · CRUD</span>
-                <span class="work__plus"
-                  ><svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    fill="none"
+          <details class="work__item rv" name="work">
+            <summary class="work__row">
+              <span class="work__no">/ 01</span>
+              <h3 class="work__ttl">Postify — Publishing Platform</h3>
+              <span class="work__tags">React · Supabase · CRUD</span>
+              <span class="work__plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="work__panel">
+              <div class="work__txt">
+                <p>
+                  The front end of a full-stack post-publishing platform, built
+                  end to end — CRUD operations, interactive user profiles and
+                  image uploads — all wired to <strong>Supabase</strong> for
+                  storage and data management.
+                </p>
+                <ul class="work__pts">
+                  <li>Full CRUD flow with interactive user profiles</li>
+                  <li>Image uploads handled via Supabase storage</li>
+                  <li>End-to-end front end of a full-stack product</li>
+                </ul>
+                <p class="work__links">
+                  <a
+                    href="https://github.com/sarmad-tabassum/complete-post-app"
+                    target="_blank"
+                    rel="noopener"
+                    >Source ↗</a
                   >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <div class="work__panel">
-                <div class="work__panel-in">
-                  <div class="work__cnt">
-                    <div>
-                      <p>
-                        The front end of a full-stack post-publishing platform,
-                        built end to end — CRUD operations, interactive user
-                        profiles and image uploads — all wired to
-                        <strong>Supabase</strong> for storage and data
-                        management. My first real step beyond the static page.
-                      </p>
-                      <ul class="work__pts">
-                        <li>Full CRUD flow with interactive user profiles</li>
-                        <li>Image uploads handled via Supabase storage</li>
-                        <li>End-to-end front end of a full-stack product</li>
-                      </ul>
-                      <div class="work__links">
-                        <a href="#" aria-label="View Postify live">Live ↗</a>
-                        <a
-                          href="https://github.com/sarmad-tabassum/complete-post-app"
-                          target="_blank"
-                          rel="noopener"
-                          aria-label="View Postify source on GitHub"
-                          >Source ↗</a
-                        >
-                      </div>
-                    </div>
-                    <p style="align-self: end">
-                      <span class="work__status"
-                        >✓ Shipped — Supabase powered</span
-                      >
-                    </p>
-                  </div>
-                </div>
+                </p>
               </div>
-            </li>
-
-            <li
-              class="work__item"
-              data-img="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=800&auto=format&fit=crop"
-            >
-              <button
-                class="work__row"
-                aria-expanded="false"
-                data-cursor="VIEW"
-              >
-                <span class="work__no">/ 02</span>
-                <span class="work__ttl">Dynamic Weather App</span>
-                <span class="work__tags">JavaScript · Axios · WeatherAPI</span>
-                <span class="work__plus"
-                  ><svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    fill="none"
-                  >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <div class="work__panel">
-                <div class="work__panel-in">
-                  <div class="work__cnt">
-                    <div>
-                      <p>
-                        An interactive weather-tracking interface that fetches
-                        real-time data from <strong>WeatherAPI</strong> using
-                        Axios — with dynamic UI updates and
-                        <strong>background video transitions</strong> that
-                        change with the actual weather outside.
-                      </p>
-                      <ul class="work__pts">
-                        <li>Real-time data via Axios + WeatherAPI</li>
-                        <li>Dynamic UI states driven by live conditions</li>
-                        <li>Background video transitions per weather type</li>
-                      </ul>
-                      <div class="work__links">
-                        <a href="#" aria-label="View the weather app live"
-                          >Live ↗</a
-                        >
-                        <a
-                          href="https://github.com/sarmad-tabassum/weather-app-with-details"
-                          target="_blank"
-                          rel="noopener"
-                          aria-label="View weather app source on GitHub"
-                          >Source ↗</a
-                        >
-                      </div>
-                    </div>
-                    <p style="align-self: end">
-                      <span class="work__status">✓ Shipped — live data</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li
-              class="work__item"
-              data-img="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop"
-            >
-              <button
-                class="work__row"
-                aria-expanded="false"
-                data-cursor="VIEW"
-              >
-                <span class="work__no">/ 03</span>
-                <span class="work__ttl">News Portal Application</span>
-                <span class="work__tags">Vanilla JS · REST · Responsive</span>
-                <span class="work__plus"
-                  ><svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    fill="none"
-                  >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <div class="work__panel">
-                <div class="work__panel-in">
-                  <div class="work__cnt">
-                    <div>
-                      <p>
-                        A real-time news feed built with
-                        <strong>vanilla JavaScript and REST APIs</strong> —
-                        structured HTML5/CSS3, responsive layouts, and a clean
-                        reading experience that holds up across every device.
-                      </p>
-                      <ul class="work__pts">
-                        <li>Live feed powered by REST APIs</li>
-                        <li>Semantic, structured HTML5/CSS3</li>
-                        <li>Responsive reading experience, mobile-first</li>
-                      </ul>
-                      <div class="work__links">
-                        <a href="#" aria-label="View the news portal live"
-                          >Live ↗</a
-                        >
-                        <a
-                          href="https://github.com/sarmad-tabassum/news-app-by-api-smit"
-                          target="_blank"
-                          rel="noopener"
-                          aria-label="View news portal source on GitHub"
-                          >Source ↗</a
-                        >
-                      </div>
-                    </div>
-                    <p style="align-self: end">
-                      <span class="work__status">✓ Shipped — responsive</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li
-              class="work__item"
-              data-img="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop"
-            >
-              <button
-                class="work__row"
-                aria-expanded="false"
-                data-cursor="VIEW"
-              >
-                <span class="work__no">/ 04</span>
-                <span class="work__ttl">This Portfolio</span>
-                <span class="work__tags">You are here · Vanilla JS</span>
-                <span class="work__plus"
-                  ><svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    fill="none"
-                  >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <div class="work__panel">
-                <div class="work__panel-in">
-                  <div class="work__cnt">
-                    <div>
-                      <p>
-                        Handcrafted, end to end — the preloader, the cursor, the
-                        accordion you just used, all written in vanilla
-                        JavaScript because understanding the platform beats
-                        importing it. One h1, four nav links, semantic to the
-                        last tag.
-                      </p>
-                      <ul class="work__pts">
-                        <li>
-                          Custom cursor, hover previews and saved checklists —
-                          no libraries
-                        </li>
-                        <li>
-                          Respects prefers-reduced-motion and works without JS
-                        </li>
-                        <li>W3C-valid, audited, accessible by default</li>
-                      </ul>
-                      <div class="work__links">
-                        <a
-                          href="https://github.com/sarmad-tabassum/portfolio-project-decode-labs"
-                          target="_blank"
-                          rel="noopener"
-                          aria-label="View this portfolio's source on GitHub"
-                          >Source ↗</a
-                        >
-                      </div>
-                    </div>
-                    <p style="align-self: end">
-                      <span class="work__status">● You're looking at it</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <figure class="work__preview" aria-hidden="true">
-            <div class="frame">
               <img
-                id="prevImg"
-                src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop"
-                alt=""
-                width="600"
-                height="420"
+                src="./assets/Post-App.png"
+                alt="Screenshot of the Postify publishing platform interface"
+                width="1200"
+                height="840"
+                loading="lazy"
               />
             </div>
-          </figure>
+          </details>
+
+          <details class="work__item rv" name="work">
+            <summary class="work__row">
+              <span class="work__no">/ 02</span>
+              <h3 class="work__ttl">Dynamic Weather App</h3>
+              <span class="work__tags">JavaScript · Axios · WeatherAPI</span>
+              <span class="work__plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="work__panel">
+              <div class="work__txt">
+                <p>
+                  An interactive weather-tracking interface that fetches
+                  real-time data from <strong>WeatherAPI</strong> using Axios —
+                  with dynamic UI updates and
+                  <strong>background video transitions</strong> that change with
+                  the weather outside.
+                </p>
+                <ul class="work__pts">
+                  <li>Real-time data via Axios + WeatherAPI</li>
+                  <li>Dynamic UI states driven by live conditions</li>
+                  <li>Background video transitions per weather type</li>
+                </ul>
+                <p class="work__links">
+                  <a
+                    href="https://github.com/sarmad-tabassum/weather-app-with-details"
+                    target="_blank"
+                    rel="noopener"
+                    >Source ↗</a
+                  >
+                </p>
+              </div>
+              <img
+                src="./assets/Weather-App.png"
+                alt="Screenshot of the dynamic weather application interface"
+                width="1200"
+                height="840"
+                loading="lazy"
+              />
+            </div>
+          </details>
+
+          <details class="work__item rv" name="work">
+            <summary class="work__row">
+              <span class="work__no">/ 03</span>
+              <h3 class="work__ttl">News Portal Application</h3>
+              <span class="work__tags">Vanilla JS · REST · Responsive</span>
+              <span class="work__plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="work__panel">
+              <div class="work__txt">
+                <p>
+                  A real-time news feed built with
+                  <strong>vanilla JavaScript and REST APIs</strong> — structured
+                  HTML5/CSS3, responsive layouts, and a clean reading experience
+                  that holds up across every device.
+                </p>
+                <ul class="work__pts">
+                  <li>Live feed powered by REST APIs</li>
+                  <li>Semantic, structured HTML5/CSS3</li>
+                  <li>Responsive reading experience, mobile-first</li>
+                </ul>
+                <p class="work__links">
+                  <a
+                    href="https://github.com/sarmad-tabassum/news-app-by-api-smit"
+                    target="_blank"
+                    rel="noopener"
+                    >Source ↗</a
+                  >
+                </p>
+              </div>
+              <img
+                src="./assets/News-App.png"
+                alt="Screenshot of the news portal application interface"
+                width="1200"
+                height="840"
+                loading="lazy"
+              />
+            </div>
+          </details>
+
+          <details class="work__item rv" name="work">
+            <summary class="work__row">
+              <span class="work__no">/ 04</span>
+              <h3 class="work__ttl">This Portfolio</h3>
+              <span class="work__tags">HTML + CSS only</span>
+              <span class="work__plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="work__panel">
+              <div class="work__txt">
+                <p>
+                  Handcrafted with a single stylesheet and zero JavaScript — the
+                  accordion you just opened is the browser's native
+                  <strong>&lt;details&gt;</strong> element, the motion is pure
+                  CSS, and the structure is semantic to the last tag. The page
+                  itself is the skill demo.
+                </p>
+                <ul class="work__pts">
+                  <li>One h1, four nav links, W3C-valid markup</li>
+                  <li>CSS Grid for the page, Flexbox for the parts</li>
+                  <li>Respects prefers-reduced-motion</li>
+                </ul>
+                <p class="work__links">
+                  <a
+                    href="https://github.com/sarmad-tabassum/portfolio-project-decode-labs"
+                    target="_blank"
+                    rel="noopener"
+                    >Source ↗</a
+                  >
+                </p>
+              </div>
+              <img
+                src="./assets/Portfolio.png"
+                alt="Full-page screenshot of this portfolio website"
+                width="1200"
+                height="840"
+                loading="lazy"
+              />
+            </div>
+          </details>
         </div>
       </section>
 
@@ -668,13 +518,11 @@
                 <span class="edu__live">Live</span></span
               >
             </div>
-
             <div class="edu__row">
               <span class="edu__year">2023 — 2025</span>
               <p class="edu__what">FSc · Pre-Engineering</p>
               <span class="edu__where">Bahria College Karsaz · Karachi</span>
             </div>
-
             <div class="edu__row">
               <span class="edu__year">2021 — 2023</span>
               <p class="edu__what">Matriculation</p>
@@ -684,7 +532,7 @@
         </div>
       </section>
 
-      <!-- ================= 06 STANDARDS ================= -->
+      <!-- ================= 06 STANDARDS (static — all enforced) ================= -->
       <section class="flight sec" id="standards">
         <div class="wrap flight__grid">
           <div class="flight__side rv">
@@ -693,120 +541,71 @@
               My non-negotiables<span style="color: var(--orange)">.</span>
             </h2>
             <p>
-              Before any project of mine is called "done", these six boxes are
-              ticked — every time. Go ahead, try them. Your progress is saved in
-              this browser.
+              Six checks every build must pass before it ships. They're already
+              ticked — because on my projects, these aren't optional.
             </p>
             <div class="flight__meter">
               <div class="flight__meter-top">
-                <span>PROGRESS</span><b id="ckCount">0 / 6</b>
+                <span>ENFORCED</span><b>6 / 6 · ALWAYS</b>
               </div>
-              <div
-                class="flight__bar"
-                role="progressbar"
-                aria-valuemin="0"
-                aria-valuemax="6"
-                aria-valuenow="0"
-                aria-label="Standards checklist progress"
-                id="ckMeter"
-              >
-                <i id="ckFill"></i>
-              </div>
-              <button class="reset" id="ckReset" type="button">Reset</button>
+              <div class="flight__bar"><i style="width: 100%"></i></div>
             </div>
           </div>
 
-          <form
-            class="flight__card rv"
-            id="ckCard"
-            style="--d: 0.15s"
-            aria-label="Quality standards checklist"
-          >
-            <span class="stamp" aria-hidden="true">Approved ★</span>
+          <div class="flight__card rv">
             <ul class="checks">
               <li>
-                <label
-                  ><input type="checkbox" name="ia" /><span class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>IA</strong>Sitemap and heading outline decided
-                    before any code.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>IA</strong>Sitemap and heading outline decided before
+                  any code.
+                </p>
               </li>
               <li>
-                <label
-                  ><input type="checkbox" name="html" /><span class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>HTML</strong>Semantic landmarks, exactly one
-                    &lt;h1&gt;, zero div soup.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>HTML</strong>Semantic landmarks, exactly one
+                  &lt;h1&gt;, zero div soup.
+                </p>
               </li>
               <li>
-                <label
-                  ><input type="checkbox" name="css" /><span class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>CSS</strong>One external stylesheet — clean naming,
-                    DRY, no inline styles.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>CSS</strong>One external stylesheet — clean naming,
+                  DRY, no inline styles.
+                </p>
               </li>
               <li>
-                <label
-                  ><input type="checkbox" name="layout" /><span class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>LAYOUT</strong>Grid for the page, Flexbox for the
-                    parts — right tool, right scale.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>LAYOUT</strong>Grid for the page, Flexbox for the
+                  parts — right tool, right scale.
+                </p>
               </li>
               <li>
-                <label
-                  ><input type="checkbox" name="assets" /><span class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>ASSETS</strong>Every image has a purpose, an alt,
-                    and explicit dimensions.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>ASSETS</strong>Every image has a purpose, an alt, and
+                  explicit dimensions.
+                </p>
               </li>
               <li>
-                <label
-                  ><input type="checkbox" name="validation" /><span
-                    class="ckbox"
-                    ><svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12l5 5 9-11" /></svg
-                  ></span>
-                  <span class="cktxt"
-                    ><strong>VALIDATION</strong>W3C zero errors · Lighthouse 90+
-                    on every audit.</span
-                  ></label
-                >
+                <span class="ck" aria-hidden="true"></span>
+                <p class="cktxt">
+                  <strong>VALIDATION</strong>W3C zero errors · Lighthouse 90+ on
+                  every audit.
+                </p>
               </li>
             </ul>
-          </form>
+          </div>
         </div>
       </section>
 
-      <!-- ================= QUOTE (dark) ================= -->
-      <section class="dark quote">
+      <!-- ================= QUOTE ================= -->
+      <div class="dark quote">
         <div class="wrap">
           <p class="mark rv" aria-hidden="true">"</p>
-          <blockquote class="rv" style="--d: 0.1s">
+          <blockquote class="rv">
             <p>
               The frontend is the only part of the system the world will ever
               see.
@@ -814,90 +613,77 @@
             <cite>— My Rule No. 01 · taped above the desk</cite>
           </blockquote>
         </div>
-      </section>
-
-      <!-- ================= CONTACT / FOOTER ================= -->
-      <footer class="dark" id="contact">
-        <div class="wrap cta">
-          <p class="eyebrow rv"><i>07</i> — Your Move</p>
-          <a
-            class="mega rv"
-            style="--d: 0.1s"
-            href="mailto:sarmadplaying@gmail.com?subject=Internship%20%2F%20Frontend%20Opportunity"
-            data-cursor="HELLO"
-          >
-            Let's build something<span aria-hidden="true">→</span></a
-          >
-        </div>
-
-        <div class="wrap foot__grid">
-          <div class="rv">
-            <h4>Sarmad Tabassum</h4>
-            <p>
-              Frontend developer from Karachi — responsive interfaces, REST APIs
-              and Supabase-backed projects. Building the foundation before the
-              framework gets fancy.
-            </p>
-            <span class="foot__badge"
-              >Saylani Mass IT · Web &amp; App Development</span
-            >
-          </div>
-          <nav class="rv" style="--d: 0.08s" aria-label="Footer">
-            <h4>Sitemap</h4>
-            <ul class="foot__links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#work">Selected Work</a></li>
-              <li><a href="#process">Process</a></li>
-              <li><a href="#standards">Standards</a></li>
-            </ul>
-          </nav>
-          <div class="rv" style="--d: 0.16s">
-            <h4>Contact</h4>
-            <ul class="foot__contact">
-              <li>
-                <span class="k">Mail</span
-                ><a href="mailto:sarmadplaying@gmail.com"
-                  >sarmadplaying@gmail.com</a
-                >
-                <button
-                  class="copy"
-                  id="copyMail"
-                  type="button"
-                  data-cursor="COPY"
-                >
-                  Copy
-                </button>
-              </li>
-              <li>
-                <span class="k">Call</span
-                ><a href="tel:+923353949723">+92 335 3949723</a>
-              </li>
-              <li>
-                <span class="k">GitHub</span
-                ><a
-                  href="https://github.com/sarmad-tabassum"
-                  target="_blank"
-                  rel="noopener"
-                  >github.com/sarmad-tabassum</a
-                >
-              </li>
-              <li><span class="k">Base</span>Karachi, Pakistan</li>
-              <li><span class="k">Speak</span>English · Urdu · Punjabi</li>
-              <li>
-                <span class="k">Local</span><span id="clock">— : — PKT</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="wrap foot__base">
-          <span>© 2026 Sarmad Tabassum — handcrafted, no shortcuts</span>
-          <span>HTML · CSS · JS · React</span>
-          <a href="#top">Back to top ↑</a>
-        </div>
-      </footer>
+      </div>
     </main>
 
-    <script src="script.js"></script>
+    <!-- ================= CONTACT / FOOTER ================= -->
+    <footer class="dark" id="contact">
+      <div class="wrap cta">
+        <p class="eyebrow rv"><i>07</i> — Your Move</p>
+        <a
+          class="mega rv"
+          href="mailto:sarmadplaying@gmail.com?subject=Internship%20%2F%20Frontend%20Opportunity"
+        >
+          Let's build something<span aria-hidden="true">→</span></a
+        >
+      </div>
+
+      <div class="wrap foot__grid">
+        <div class="rv">
+          <h3>Sarmad Tabassum</h3>
+          <p>
+            Frontend developer from Karachi — responsive interfaces, REST APIs
+            and Supabase-backed projects. Building the foundation before the
+            framework gets fancy.
+          </p>
+          <span class="foot__badge"
+            >Saylani Mass IT · Web &amp; App Development</span
+          >
+        </div>
+        <nav class="rv" aria-label="Footer">
+          <h3>Sitemap</h3>
+          <ul class="foot__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Selected Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#standards">Standards</a></li>
+          </ul>
+        </nav>
+        <div class="rv">
+          <h3>Contact</h3>
+          <ul class="foot__contact">
+            <li>
+              <span class="k">Mail</span
+              ><a href="mailto:sarmadplaying@gmail.com"
+                >sarmadplaying@gmail.com</a
+              >
+            </li>
+            <li>
+              <span class="k">Call</span
+              ><a href="tel:+923353949723">+92 335 3949723</a>
+            </li>
+            <li>
+              <span class="k">GitHub</span
+              ><a
+                href="https://github.com/sarmad-tabassum"
+                target="_blank"
+                rel="noopener"
+                >github.com/sarmad-tabassum</a
+              >
+            </li>
+            <li><span class="k">Base</span>Karachi, Pakistan</li>
+            <li><span class="k">Speak</span>English · Urdu · Punjabi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap foot__base">
+        <span
+          >© 2026 Sarmad Tabassum — handcrafted with HTML &amp; CSS only</span
+        >
+        <span>No JavaScript · No frameworks · No shortcuts</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
   </body>
 </html>
