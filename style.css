@@ -810,16 +810,16 @@ body.loaded .ln > span {
   border-radius: 8px;
   overflow: hidden;
 }
-.stats > div {
+.stats > li {
   padding: 1.5rem 1.3rem;
   border-right: 1px solid var(--line);
   background: var(--paper2);
   transition: background 0.3s;
 }
-.stats > div:last-child {
+.stats > li:last-child {
   border-right: none;
 }
-.stats > div:hover {
+.stats > li:hover {
   background: var(--paper);
 }
 .stats b {
@@ -852,10 +852,10 @@ body.loaded .ln > span {
   .stats {
     grid-template-columns: 1fr 1fr;
   }
-  .stats > div:nth-child(2n) {
+  .stats > li:nth-child(2n) {
     border-right: none;
   }
-  .stats > div:nth-child(-n + 2) {
+  .stats > li:nth-child(-n + 2) {
     border-bottom: 1px solid var(--line);
   }
 }

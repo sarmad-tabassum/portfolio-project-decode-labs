@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#161310" />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23161310'/><text x='32' y='45' font-size='36' font-family='Georgia' text-anchor='middle' fill='%23E4572E'>S</text></svg>"
+      href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23161310'/%3E%3Ctext%20x='32'%20y='45'%20font-size='36'%20font-family='Georgia'%20text-anchor='middle'%20fill='%23E4572E'%3ES%3C/text%3E%3C/svg%3E"
     />
 
     <!-- CDN: fonts -->
@@ -97,7 +97,7 @@
 
     <main id="top">
       <!-- ================= HERO ================= -->
-      <section class="hero" aria-label="Introduction">
+      <section class="hero">
         <div class="wrap">
           <div class="hero__meta">
             <span class="avail"
@@ -207,7 +207,7 @@
       <!-- ================= 01 ABOUT ================= -->
       <section class="sec" id="about">
         <div class="wrap about__grid">
-          <aside class="about__side rv">
+          <div class="about__side rv">
             <p class="eyebrow"><i>01</i> — About</p>
             <h2 class="h2">The person behind <em>the markup.</em></h2>
             <figure class="fig">
@@ -223,7 +223,7 @@
               </div>
               <figcaption>Fig. 02 — where it all happens</figcaption>
             </figure>
-          </aside>
+          </div>
           <div class="about__body rv" style="--d: 0.15s">
             <p>
               I'm a frontend-focused web developer from
@@ -253,12 +253,12 @@
               &amp; everything behind the interface.
             </p>
 
-            <div class="stats rv" style="--d: 0.2s" aria-label="Quick numbers">
-              <div><b>03</b><span>Projects shipped</span></div>
-              <div><b>00</b><span>W3C errors</span></div>
-              <div><b>0.00</b><span>Layout shift (CLS)</span></div>
-              <div><b>03</b><span>Languages spoken</span></div>
-            </div>
+            <ul class="stats rv" style="--d: 0.2s" aria-label="Quick numbers">
+              <li><b>03</b><span>Projects shipped</span></li>
+              <li><b>00</b><span>W3C errors</span></li>
+              <li><b>0.00</b><span>Layout shift (CLS)</span></li>
+              <li><b>03</b><span>Languages spoken</span></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -271,7 +271,7 @@
             <h2 class="h2">What I work with. <em>Five honest lines.</em></h2>
           </header>
 
-          <article class="skill rv">
+          <div class="skill rv">
             <span class="skill__no">SKILL / 01</span>
             <h3 class="skill__key">Semantic HTML5 &amp; CSS3</h3>
             <p class="skill__val">
@@ -280,8 +280,8 @@
               hand-rolled CSS when craft does.
               <strong>Mobile-first, always.</strong>
             </p>
-          </article>
-          <article class="skill rv" style="--d: 0.06s">
+          </div>
+          <div class="skill rv" style="--d: 0.06s">
             <span class="skill__no">SKILL / 02</span>
             <h3 class="skill__key">Modern JavaScript (ES6+)</h3>
             <p class="skill__val">
@@ -290,8 +290,8 @@
               patience for <strong>debugging and troubleshooting</strong> until
               it actually works.
             </p>
-          </article>
-          <article class="skill rv" style="--d: 0.12s">
+          </div>
+          <div class="skill rv" style="--d: 0.12s">
             <span class="skill__no">SKILL / 03</span>
             <h3 class="skill__key">React.js &amp; Tailwind CSS</h3>
             <p class="skill__val">
@@ -299,8 +299,8 @@
               sane, <strong>API integration</strong>, and utility-first styling
               with Tailwind for interfaces that scale.
             </p>
-          </article>
-          <article class="skill rv" style="--d: 0.18s">
+          </div>
+          <div class="skill rv" style="--d: 0.18s">
             <span class="skill__no">SKILL / 04</span>
             <h3 class="skill__key">REST APIs &amp; Supabase</h3>
             <p class="skill__val">
@@ -308,8 +308,8 @@
               image uploads and storage — <strong>Supabase</strong> as the
               backend behind the interface.
             </p>
-          </article>
-          <article class="skill rv" style="--d: 0.24s">
+          </div>
+          <div class="skill rv" style="--d: 0.24s">
             <span class="skill__no">SKILL / 05</span>
             <h3 class="skill__key">Workflow &amp; CS Fundamentals</h3>
             <p class="skill__val">
@@ -317,7 +317,7 @@
               computer-science fundamentals underneath, and a habit of picking
               up new tools and workflows <strong>independently — fast</strong>.
             </p>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -660,24 +660,26 @@
             <h2 class="h2">Education &amp; <em>training.</em></h2>
           </header>
           <div class="rv">
-            <article class="edu__row">
+            <div class="edu__row">
               <span class="edu__year">In Progress</span>
-              <h3 class="edu__what">Web &amp; App Development Course</h3>
+              <p class="edu__what">Web &amp; App Development Course</p>
               <span class="edu__where"
                 >Saylani Mass IT Training · Karachi
                 <span class="edu__live">Live</span></span
               >
-            </article>
-            <article class="edu__row">
+            </div>
+
+            <div class="edu__row">
               <span class="edu__year">2023 — 2025</span>
-              <h3 class="edu__what">FSc · Pre-Engineering</h3>
+              <p class="edu__what">FSc · Pre-Engineering</p>
               <span class="edu__where">Bahria College Karsaz · Karachi</span>
-            </article>
-            <article class="edu__row">
+            </div>
+
+            <div class="edu__row">
               <span class="edu__year">2021 — 2023</span>
-              <h3 class="edu__what">Matriculation</h3>
+              <p class="edu__what">Matriculation</p>
               <span class="edu__where">Bahria College Karsaz · Karachi</span>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -685,7 +687,7 @@
       <!-- ================= 06 STANDARDS ================= -->
       <section class="flight sec" id="standards">
         <div class="wrap flight__grid">
-          <aside class="flight__side rv">
+          <div class="flight__side rv">
             <p class="eyebrow"><i>06</i> — Standards</p>
             <h2 class="h2">
               My non-negotiables<span style="color: var(--orange)">.</span>
@@ -712,7 +714,7 @@
               </div>
               <button class="reset" id="ckReset" type="button">Reset</button>
             </div>
-          </aside>
+          </div>
 
           <form
             class="flight__card rv"
@@ -801,7 +803,7 @@
       </section>
 
       <!-- ================= QUOTE (dark) ================= -->
-      <section class="dark quote" aria-label="Philosophy">
+      <section class="dark quote">
         <div class="wrap">
           <p class="mark rv" aria-hidden="true">"</p>
           <blockquote class="rv" style="--d: 0.1s">
@@ -882,10 +884,7 @@
               <li><span class="k">Base</span>Karachi, Pakistan</li>
               <li><span class="k">Speak</span>English · Urdu · Punjabi</li>
               <li>
-                <span class="k">Local</span
-                ><span id="clock" aria-label="Local time in Karachi"
-                  >— : — PKT</span
-                >
+                <span class="k">Local</span><span id="clock">— : — PKT</span>
               </li>
             </ul>
           </div>
